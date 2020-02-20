@@ -24,7 +24,8 @@ RUN cd /tmp \
 
 #install arduino-cli
 RUN cd /tmp \
-  && curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/bin sh \
+  && curl https://github.com/arduino/arduino-cli/releases/download/0.7.0/arduino-cli_0.7.0_Linux_64bit.tar.gz -s -L -o arduino-cli.tar.gz \
+  && tar xvf arduino-cli.tar.gz -C /usr/bin \
   && rm -Rf /tmp/*
 
 #install Cura
