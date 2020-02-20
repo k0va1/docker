@@ -21,6 +21,12 @@ RUN cd /tmp \
 	&& tar xvf ffmpeg.tar.xz -C /opt/ffmpeg --strip-components=1 \
   && rm -Rf /tmp/*
 
+
+#install arduino-cli
+RUN cd /tmp \
+  && curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/bin sh \
+  && rm -Rf /tmp/*
+
 #install Cura
 RUN cd /tmp \
   && wget https://github.com/Ultimaker/CuraEngine/archive/${CURA_VERSION}.tar.gz \
